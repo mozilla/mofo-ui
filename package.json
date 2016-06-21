@@ -1,0 +1,22 @@
+{
+  "name": "mofo-ui",
+  "version": "1.0.0",
+  "description": "React component library for Mozilla Foundation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvn/mofo-ui.git"
+  },
+  "author": "Mozilla",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/gvn/mofo-ui/issues"
+  },
+  "homepage": "https://github.com/gvn/mofo-ui#readme",
+  "dependencies": {
+    "mofo-bootstrap": "1.0.0"
+  }
+}
