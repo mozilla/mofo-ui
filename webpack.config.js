@@ -3,12 +3,25 @@ var webpack = require(`webpack`);
 module.exports = {
   context: `${__dirname}/src`,
   entry: {
-    javascript: `./demo.jsx`
+    javascript: `./exports.js`
   },
   output: {
-    filename: `/js/demo.js`,
-    path: `${__dirname}/demo`
+    filename: `/mofo-ui.js`,
+    path: `${__dirname}/dist`,
+    library: `MofoUI`,
+    libraryTarget: `umd`
   },
+  // target: `node`,
+  externals: [
+    {
+      react: {
+        root: 'React',
+        commonjs2: 'react',
+        commonjs: 'react',
+        amd: 'react'
+      }
+    }
+  ],
   module: {
     loaders: [
       {
