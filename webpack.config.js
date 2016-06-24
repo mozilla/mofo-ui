@@ -11,7 +11,6 @@ module.exports = [{
     library: `MofoUI`,
     libraryTarget: `umd`
   },
-  // target: `node`,
   externals: [
     {
       react: {
