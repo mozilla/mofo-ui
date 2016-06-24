@@ -1,0 +1,52 @@
+.tab-switcher.pull-up {
+  margin-top: -2.75rem; }
+
+.tab-switcher .tabs {
+  display: flex; }
+  .tab-switcher .tabs .btn {
+    line-height: 2rem;
+    border: 0;
+    flex: 1;
+    margin: 0 0.5rem;
+    text-transform: none;
+    color: #fff;
+    background: rgba(90, 107, 164, 0.9);
+    font-weight: 300;
+    font-size: 1.25rem; }
+    .tab-switcher .tabs .btn .icon {
+      max-width: 1.375em;
+      max-height: 1.375em; }
+    .tab-switcher .tabs .btn:first-child {
+      margin-left: 0; }
+    .tab-switcher .tabs .btn:last-child {
+      margin-right: 0; }
+    .tab-switcher .tabs .btn.active {
+      background: #f2f2f2;
+      color: inherit; }
+
+.tab-switcher.inline .tabs {
+  border-bottom: 0.0625rem solid #4383bf; }
+  .tab-switcher.inline .tabs .btn {
+    background: #dbe7f3;
+    color: #4383bf;
+    border: 0.0625rem solid #f2f2f2;
+    border-bottom: 0; }
+    .tab-switcher.inline .tabs .btn.active {
+      border: 0.0625rem solid #4383bf;
+      border-bottom: 1px solid #f2f2f2;
+      background: #f2f2f2;
+      margin-bottom: -0.0625rem; }
+
+.tab-switcher .panel {
+  display: none; }
+  .tab-switcher .panel.active {
+    display: block; }
+
+.radio-filter {
+  margin: 0 auto; }
+
+.radio-inline input[type="radio"] {
+  visibility: hidden; }
+
+.radio-inline input:checked + span {
+  color: #3bba99; }

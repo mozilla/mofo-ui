@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build:js": "webpack",
-    "build:scss": "node-sass src/main.scss demo/css/mofo-ui.css",
+    "build:scss": "node-sass src/main.scss dist/mofo-ui.css",
     "build:static": "cp src/index.html demo/index.html && cp -r node_modules/mofo-bootstrap/dest/ demo/",
     "build": "rimraf demo && mkdirp demo && npm-run-all build:**",
     "server": "live-server ./demo --port=1615",
