@@ -1,6 +1,6 @@
 var webpack = require(`webpack`);
 
-module.exports = {
+module.exports = [{
   context: `${__dirname}/src`,
   entry: {
     javascript: `./exports.js`
@@ -34,4 +34,25 @@ module.exports = {
       }
     ]
   }
-};
+}, {
+  context: `${__dirname}/src`,
+  entry: {
+    javascript: `./demo.jsx`
+  },
+  output: {
+    filename: `/demo.js`,
+    path: `${__dirname}/demo/js`,
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js(x?)$/,
+        exclude: /node_modules/,
+        loader: `babel`,
+        query: {
+          presets: [`es2015`, `react`]
+        }
+      }
+    ]
+  }
+}];

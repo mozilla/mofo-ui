@@ -10,14 +10,14 @@
   "scripts": {
     "build:js": "webpack",
     "build:scss": "node-sass src/main.scss dist/mofo-ui.css",
-    "build:static": "cp src/index.html demo/index.html && cp -r node_modules/mofo-bootstrap/dest/ demo/",
-    "build": "rimraf demo && mkdirp demo && npm-run-all build:**",
+    "build:demo": "cp -r node_modules/mofo-bootstrap/dest/ demo/ && mkdirp demo/js && cp dist/mofo-ui.css demo/css/ && cp dist/mofo-ui.js demo/js/",
+    "build": "npm-run-all build:**",
     "server": "live-server ./demo --port=1615",
     "start": "npm i && npm run build && npm-run-all --parallel server watch:**",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:js": "chokidar 'src/**/*.jsx' -c 'npm run build:js'",
     "watch:scss": "chokidar 'src/**/*.scss' -c 'npm run build:scss'",
-    "watch:static": "chokidar 'src/index.html' -c 'npm run build:static'"
+    "watch:dist": "chokidar 'dist/*' -c 'npm run build:demo'"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,7 @@
     "chokidar": "^1.4.3",
     "chokidar-cli": "^1.2.0",
     "live-server": "^0.9.2",
+    "mkdirp": "^0.5.1",
     "node-sass": "^3.4.2",
     "npm-run-all": "^1.7.0",
     "rimraf": "^2.5.2",
