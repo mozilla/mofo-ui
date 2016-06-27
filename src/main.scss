@@ -1,18 +1,10 @@
-// START: COPIED FROM SCIENCE --------------------------------------------------
-
 // mofo-bootstrap bits
 
 @import '../node_modules/mofo-bootstrap/src/scss/custom/colors';
-@import '../node_modules/bootstrap/scss/_variables.scss';
-@import '../node_modules/bootstrap/scss/mixins.scss';
 
 // Non-mofo-bootstrap Colors
 
 $off-white: darken($white, 5%); // TODO - promote to mofo-bootstrap, or hardcode variants?
-
-// END: COPIED FROM SCIENCE ----------------------------------------------------
-
-
 
 // Components
 
