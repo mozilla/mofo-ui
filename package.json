@@ -32,6 +32,9 @@
   "peerDependencies": {
     "react": "15.0.1"
   },
+  "dependencies": {
+    "rc-collapse": "1.6.3"
+  },
   "devDependencies": {
     "react": "15.0.1",
     "react-dom": "15.0.1",
