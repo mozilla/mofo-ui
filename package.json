@@ -30,12 +30,13 @@
   },
   "homepage": "https://github.com/gvn/mofo-ui#readme",
   "peerDependencies": {
+    "rc-collapse": "1.6.3",
     "react": "15.0.1"
   },
   "dependencies": {
-    "rc-collapse": "1.6.3"
   },
   "devDependencies": {
+    "rc-collapse": "1.6.3",
     "react": "15.0.1",
     "react-dom": "15.0.1",
     "mofo-bootstrap": "1.0.1",
