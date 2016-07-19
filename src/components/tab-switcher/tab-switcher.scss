@@ -7,7 +7,6 @@
     display: flex;
 
     .btn {
-      line-height: 2rem;
       border: 0;
       flex: 1;
       margin: 0 0.5rem;
@@ -16,10 +15,25 @@
       background: rgba($nightly-blue, 0.9);
       font-weight: 300;
       font-size: 1.25rem;
+      justify-content: center;
+      display: flex;
+      padding: 0.5em;
+      outline: 0;
+      cursor: pointer;
 
       .icon {
         max-width: 1.375em;
         max-height: 1.375em;
+
+        @media (min-width: 544px) {
+          display: none;
+        }
+      }
+
+      .name {
+        @media (max-width: 543px) {
+          display: none;
+        }
       }
 
       &:first-child {

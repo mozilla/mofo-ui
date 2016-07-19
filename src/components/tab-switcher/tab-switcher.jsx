@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router";
 
 // Children nodes and buttons can be hidden if empty based on hidden param passed to them.
 // TODO: find a way to allow another tab to be active by default, especially if it's the only tab with content/not hidden
@@ -15,7 +14,8 @@ export default React.createClass({
         iconDefault: React.PropTypes.string.isRequired,
         iconActive: React.PropTypes.string
       }).isRequired
-    }))
+    })),
+    onChange: React.PropTypes.func
   },
   getSlugIndex(slug) {
     let slugIndex = 0; // Default to first tab
@@ -36,20 +36,27 @@ export default React.createClass({
   },
   tabClick: function (index) {
     this.setState({activeTab: index});
+
+    if (this.props.onChange) {
+      this.props.onChange({
+        index: index,
+        tabName: this.props.children[index].props.name
+      });
+    }
   },
   render: function() {
     let buttons = this.props.children.map((element, index) => {
       if(this.props.children[index].props.hidden) { return; }
+
       return (
-        <Link
-          to={`${this.props.baseURL}${this.props.children[index].props.slug}`}
+        <button
           className={`btn ${index === this.state.activeTab ? `active` : ``}`}
           onClick={this.tabClick.bind(null, index)}
-          key={index}
+          key={element.props.slug}
           hidden={this.props.children[index].props.hidden}>
-            <img className="icon hidden-sm-up" src={index === this.state.activeTab && element.props.iconActive ? element.props.iconActive : element.props.iconDefault}/>
-            <span className="hidden-xs-down">{element.props.name}</span>
-        </Link>
+            <img className="icon" src={index === this.state.activeTab && element.props.iconActive ? element.props.iconActive : element.props.iconDefault}/>
+            <span className="name">{element.props.name}</span>
+        </button>
       );
     });
 

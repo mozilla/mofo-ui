@@ -13,12 +13,8 @@ module.exports = [{
   },
   externals: [
     {
-      react: {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react'
-      }
+      react: 'react',
+      "rc-collapse": true
     }
   ],
   module: {

@@ -1,10 +1,12 @@
+body {
+  font-family: "Fira Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
 .tab-switcher.pull-up {
   margin-top: -2.75rem; }
 
 .tab-switcher .tabs {
   display: flex; }
   .tab-switcher .tabs .btn {
-    line-height: 2rem;
     border: 0;
     flex: 1;
     margin: 0 0.5rem;
@@ -12,10 +14,21 @@
     color: #fff;
     background: rgba(90, 107, 164, 0.9);
     font-weight: 300;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    justify-content: center;
+    display: flex;
+    padding: 0.5em;
+    outline: 0;
+    cursor: pointer; }
     .tab-switcher .tabs .btn .icon {
       max-width: 1.375em;
       max-height: 1.375em; }
+      @media (min-width: 544px) {
+        .tab-switcher .tabs .btn .icon {
+          display: none; } }
+    @media (max-width: 543px) {
+      .tab-switcher .tabs .btn .name {
+        display: none; } }
     .tab-switcher .tabs .btn:first-child {
       margin-left: 0; }
     .tab-switcher .tabs .btn:last-child {
