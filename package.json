@@ -20,7 +20,7 @@
     "watch:dist": "chokidar 'dist/*' -c 'npm run build:demo'",
     "preversion": "git checkout master && git pull mozilla master",
     "version": "npm run build",
-    "postversion": "npm publish && git push mozilla --tags"
+    "postversion": "npm publish && git push mozilla master && git push mozilla --tags"
   },
   "repository": {
     "type": "git",
