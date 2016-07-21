@@ -74,7 +74,7 @@ export default React.createClass({
     });
 
     return (
-      <div className={`tab-switcher${this.props.className ? ` ${this.props.className}` : ``}`}>
+      <div className={`mui-tab-switcher${this.props.className ? ` ${this.props.className}` : ``}`}>
         <div className="tabs" hidden={buttons.length < 2}>{buttons}</div>
         <div className="panels">{panels}</div>
       </div>

@@ -182,7 +182,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    return _react2.default.createElement(
 	      "div",
-	      { className: "tab-switcher" + (this.props.className ? " " + this.props.className : "") },
+	      { className: "mui-tab-switcher" + (this.props.className ? " " + this.props.className : "") },
 	      _react2.default.createElement(
 	        "div",
 	        { className: "tabs", hidden: buttons.length < 2 },
@@ -269,7 +269,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    return _react2.default.createElement(
 	      "form",
-	      { ref: "radioFilter", className: "radio-filter" },
+	      { ref: "radioFilter", className: "mui-radio-filter" },
 	      options
 	    );
 	  }

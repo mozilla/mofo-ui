@@ -43,7 +43,7 @@ export default React.createClass({
     });
 
     return (
-      <form ref="radioFilter" className="radio-filter">
+      <form ref="radioFilter" className="mui-radio-filter">
         {options}
       </form>
     );
