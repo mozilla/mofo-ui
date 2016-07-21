@@ -17,7 +17,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:js": "chokidar 'src/**/*.jsx' -c 'npm run build:js'",
     "watch:scss": "chokidar 'src/**/*.scss' -c 'npm run build:scss'",
-    "watch:dist": "chokidar 'dist/*' -c 'npm run build:demo'"
+    "watch:dist": "chokidar 'dist/*' -c 'npm run build:demo'",
+    "preversion": "git checkout master && git pull mozilla master",
+    "version": "npm run build",
+    "postversion": "npm publish && git push origin --tags"
   },
   "repository": {
     "type": "git",
