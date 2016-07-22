@@ -12,6 +12,7 @@
     "build:scss": "node-sass src/main.scss dist/mofo-ui.css",
     "build:demo": "cp -r node_modules/mofo-bootstrap/dest/ demo/ && mkdirp demo/js && cp dist/mofo-ui.css demo/css/ && cp dist/mofo-ui.js demo/js/",
     "build": "npm-run-all build:**",
+    "deploy": "node deploy.js",
     "server": "live-server ./demo --port=1615",
     "start": "npm i && npm run build && npm-run-all --parallel server watch:**",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -49,10 +50,12 @@
     "mkdirp": "^0.5.1",
     "mofo-bootstrap": "^1.0.1",
     "node-sass": "^3.4.2",
+    "nodegit": "^0.14.1",
     "npm-run-all": "^1.7.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "rimraf": "^2.5.2",
+    "shelljs": "^0.7.0",
     "webpack": "^1.12.14"
   }
 }
