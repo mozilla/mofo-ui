@@ -3,7 +3,7 @@ import { render } from "react-dom";
 
 // Components
 
-import { TabSwitcher, RadioFilter, Collapse, Panel } from "./exports.js";
+import { TabSwitcher, Tab, RadioFilter, Collapse, Panel } from "./exports.js";
 
 const App = React.createClass({
   render() {
@@ -68,18 +68,18 @@ render((
     <h4>Hero Variant</h4>
 
     <TabSwitcher onChange={handleTabSwitch} baseURL={`/style-guide/hero-tabs/`} initialTab={`schedule`}>
-      <div slug="about" name="About" iconDefault="/img/icon-tab-schedule.svg" iconActive="/img/icon-tab-schedule-blue.svg">About content.</div>
-      <div slug="schedule" name="Schedule" iconDefault="/img/icon-tab-schedule.svg" iconActive="/img/icon-tab-schedule-blue.svg">Schedule content.</div>
-      <div slug="projects" name="Projects" iconDefault="/img/icon-tab-schedule.svg" iconActive="/img/icon-tab-schedule-blue.svg">Projects content.</div>
+      <Tab slug="about" name="About" iconDefault="/img/icon-tab-schedule.svg" iconActive="/img/icon-tab-schedule-blue.svg">About content.</Tab>
+      <Tab slug="schedule" name="Schedule" iconDefault="/img/icon-tab-schedule.svg" iconActive="/img/icon-tab-schedule-blue.svg">Schedule content.</Tab>
+      <Tab slug="projects" name="Projects" iconDefault="/img/icon-tab-schedule.svg" iconActive="/img/icon-tab-schedule-blue.svg">Projects content.</Tab>
     </TabSwitcher>
 
     <h4>Inline Variant (.inline)</h4>
 
     <TabSwitcher className="inline" baseURL={`/style-guide/variant-tabs/`} initialTab={`one`}>
-      <div slug="one" name="One" iconDefault="/img/icon-tab-schedule-blue.svg">One content.</div>
-      <div slug="two" name="Two" iconDefault="/img/icon-tab-schedule-blue.svg">Two content.</div>
-      <div slug="three" name="Three" iconDefault="/img/icon-tab-schedule-blue.svg">Three content.</div>
-      <div slug="four" name="Four" iconDefault="/img/icon-tab-schedule-blue.svg">Four content.</div>
+      <Tab slug="one" name="One" iconDefault="/img/icon-tab-schedule-blue.svg">One content.</Tab>
+      <Tab slug="two" name="Two" iconDefault="/img/icon-tab-schedule-blue.svg">Two content.</Tab>
+      <Tab slug="three" name="Three" iconDefault="/img/icon-tab-schedule-blue.svg">Three content.</Tab>
+      <Tab slug="four" name="Four" iconDefault="/img/icon-tab-schedule-blue.svg">Four content.</Tab>
     </TabSwitcher>
 
   </App>

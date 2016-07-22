@@ -7,14 +7,7 @@ export default React.createClass({
   propTypes: {
     baseURL: React.PropTypes.string.isRequired,
     className: React.PropTypes.string,
-    children: React.PropTypes.arrayOf(React.PropTypes.shape({
-      props: React.PropTypes.shape({
-        name: React.PropTypes.string.isRequired,
-        slug: React.PropTypes.string.isRequired,
-        iconDefault: React.PropTypes.string.isRequired,
-        iconActive: React.PropTypes.string
-      }).isRequired
-    })),
+    children: React.PropTypes.arrayOf(React.PropTypes.element),
     onChange: React.PropTypes.func
   },
   getSlugIndex(slug) {
