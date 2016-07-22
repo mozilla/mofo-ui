@@ -1,5 +1,3 @@
-var webpack = require(`webpack`);
-
 module.exports = [{
   context: `${__dirname}/src`,
   entry: {
@@ -13,7 +11,7 @@ module.exports = [{
   },
   externals: [
     {
-      react: 'react',
+      react: `react`,
       "rc-collapse": true
     }
   ],
@@ -36,7 +34,7 @@ module.exports = [{
   },
   output: {
     filename: `/demo.js`,
-    path: `${__dirname}/demo/js`,
+    path: `${__dirname}/demo/js`
   },
   module: {
     loaders: [

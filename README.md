@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mozilla/mofo-ui.svg?branch=master)](https://travis-ci.org/mozilla/mofo-ui)
+
 # mofo-ui
 
 **Mozilla Foundation React components.**
