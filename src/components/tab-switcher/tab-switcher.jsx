@@ -5,7 +5,6 @@ import React from "react";
 
 export default React.createClass({
   propTypes: {
-    baseURL: React.PropTypes.string.isRequired,
     className: React.PropTypes.string,
     children: React.PropTypes.arrayOf(React.PropTypes.element),
     onChange: React.PropTypes.func
