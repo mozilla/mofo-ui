@@ -1,4 +1,5 @@
 import React from "react";
+import DOMPurify from "dompurify";
 
 export default React.createClass({
   propTypes: {
@@ -28,6 +29,7 @@ export default React.createClass({
     let triggers = this.props.contents.map((item, index) => {
       let classNames = `hero${this.state.activeTrigger === index ? ` active` : ``}`;
 
+      // Using anchors instead of buttons because Firefox adds "padding" to button elements even with padding:0
       return (
         <button key={index} className={classNames} onClick={this.onTriggerClick}>
           <img className="photo" src={item.image}></img>
@@ -38,7 +40,12 @@ export default React.createClass({
     let quotes = this.props.contents.map((item, index) => {
       return (
         <div key={index} className={this.state.activeTrigger === index ? `active` : ``}>
-          <p className="caption">"{item.caption}"</p>
+          <div className="wrapper">
+            <div className="quote quote-left"></div>
+            <p className="caption" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(item.caption)}}></p>
+            <div className="quote quote-right"></div>
+          </div>
+
           <p className="attribution">– {item.attribution}</p>
         </div>
       );
