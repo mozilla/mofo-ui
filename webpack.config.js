@@ -30,7 +30,7 @@ module.exports = [{
 }, {
   context: `${__dirname}/src`,
   entry: {
-    javascript: `./demo.jsx`
+    javascript: `./demo/demo.jsx`
   },
   output: {
     filename: `/demo.js`,
