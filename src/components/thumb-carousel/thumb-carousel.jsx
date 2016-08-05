@@ -1,5 +1,4 @@
 import React from "react";
-import DOMPurify from "dompurify";
 
 export default React.createClass({
   propTypes: {
@@ -42,7 +41,7 @@ export default React.createClass({
         <div key={index} className={this.state.activeTrigger === index ? `active` : ``}>
           <div className="wrapper">
             <div className="quote quote-left"></div>
-            <p className="caption" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(item.caption)}}></p>
+            <p className="caption">{item.caption}</p>
             <div className="quote quote-right"></div>
           </div>
 

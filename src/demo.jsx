@@ -40,7 +40,7 @@ let radioOptions = [
 
 let carouselData = [{
   image: `./img/headshot-1.jpg`,
-  caption: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>Line break, yo.`,
+  caption: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
   attribution: `Cindy Sherman, Switzerland`
 }, {
   image: `./img/headshot-2.jpg`,
