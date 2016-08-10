@@ -42,12 +42,12 @@ export default React.createClass({
 
       return (
         <button
-          className={`btn ${index === this.state.activeTab ? `active` : ``}`}
+          className={`mui-btn ${index === this.state.activeTab ? `mui-active` : ``}`}
           onClick={this.tabClick.bind(null, index)}
           key={element.props.slug}
           hidden={this.props.children[index].props.hidden}>
-            <img className="icon" src={index === this.state.activeTab && element.props.iconActive ? element.props.iconActive : element.props.iconDefault}/>
-            <span className="name">{element.props.name}</span>
+            <img className="mui-icon" src={index === this.state.activeTab && element.props.iconActive ? element.props.iconActive : element.props.iconDefault}/>
+            <span className="mui-name">{element.props.name}</span>
         </button>
       );
     });
@@ -58,7 +58,7 @@ export default React.createClass({
     let panels = this.props.children.map((element, index) => {
       return (
         <div
-          className={`panel ${index === this.state.activeTab ? `active` : ``}`}
+          className={`mui-panel ${index === this.state.activeTab ? `mui-active` : ``}`}
           key={index}>
           {element}
         </div>
@@ -67,8 +67,8 @@ export default React.createClass({
 
     return (
       <div className={`mui-tab-switcher${this.props.className ? ` ${this.props.className}` : ``}`}>
-        <div className="tabs" hidden={buttons.length < 2}>{buttons}</div>
-        <div className="panels">{panels}</div>
+        <div className="mui-tabs" hidden={buttons.length < 2}>{buttons}</div>
+        <div className="mui-panels">{panels}</div>
       </div>
     );
   }

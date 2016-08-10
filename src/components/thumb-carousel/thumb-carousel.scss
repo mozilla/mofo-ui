@@ -3,10 +3,10 @@ $carousel-background: lighten($developer-blue, 40%);
 .mui-thumb-carousel {
   background: $carousel-background;
 
-  .heroes {
+  .mui-heroes {
     display: flex;
 
-    .hero {
+    .mui-hero {
       background: none;
       border: 0;
       margin: 0;
@@ -21,13 +21,13 @@ $carousel-background: lighten($developer-blue, 40%);
         border: 0;
       }
 
-      .photo {
+      .mui-photo {
         max-width: 100%;
         opacity: 0.5;
         transition: opacity 250ms ease-in-out;
       }
 
-      &.active::after {
+      &.mui-active::after {
         content: " ";
         width: 10%;
         height: 10%;
@@ -38,38 +38,37 @@ $carousel-background: lighten($developer-blue, 40%);
         transform: rotate(45deg);
       }
 
-      &.active .photo {
+      &.mui-active .mui-photo {
         opacity: 1;
       }
     }
-
   }
 
-  .quotes {
+  .mui-quotes {
     > * {
       display: none;
       color: darken($developer-blue, 20%);
       font-style: italic;
       padding: 1rem;
 
-      &.active {
+      &.mui-active {
         display: block;
       }
     }
 
-    .wrapper {
+    .mui-wrapper {
       display: flex;
       justify-content: center;
     }
 
-    .caption {
+    .mui-caption {
       font-weight: 300;
       margin: 0;
       padding: 0 10px;
       text-align: center;
     }
 
-    .quote {
+    .mui-quote {
       width: 20px;
       height: 20px;
       flex-shrink: 0;
@@ -79,14 +78,14 @@ $carousel-background: lighten($developer-blue, 40%);
       background-size: cover;
     }
 
-    .quote-right {
+    .mui-quote-right {
       align-self: flex-end;
       transform: scaleX(-1) scaleY(-1);
       position: relative;
       bottom: 8px;
     }
 
-    .attribution {
+    .mui-attribution {
       text-align: center;
       padding: 0 30px;
       margin-bottom: 0;

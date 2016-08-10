@@ -26,7 +26,7 @@ export default React.createClass({
   render: function() {
     let options = this.props.options.map(option => {
       return (
-        <label key={option.value} className="radio-inline">
+        <label key={option.value} className="mui-radio-inline">
 
           <input
             type="radio"

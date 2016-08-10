@@ -49,3 +49,7 @@ Run the following commands in your terminal:
 │   └── main.scss
 └── webpack.config.js
 ```
+
+### CSS Class Names
+
+To reduce conflicts with other CSS, prefix all class names with `mui-` (eg: `mui-tabs`).

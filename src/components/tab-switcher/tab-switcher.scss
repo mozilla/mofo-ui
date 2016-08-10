@@ -1,8 +1,8 @@
 .mui-tab-switcher {
-  .tabs {
+  .mui-tabs {
     display: flex;
 
-    .btn {
+    .mui-btn {
       border: 0;
       flex: 1;
       margin: 0 0.5rem;
@@ -17,7 +17,7 @@
       outline: 0;
       cursor: pointer;
 
-      .icon {
+      .mui-icon {
         max-width: 1.375em;
         max-height: 1.375em;
 
@@ -26,7 +26,7 @@
         }
       }
 
-      .name {
+      .mui-name {
         @media (max-width: 543px) {
           display: none;
         }
@@ -40,21 +40,21 @@
         margin-right: 0;
       }
 
-      &.active {
+      &.mui-active {
         background: $off-white;
         color: inherit;
       }
     }
   }
 
-  &.inline .tabs {
-    .btn {
+  &.mui-inline .mui-tabs {
+    .mui-btn {
       background: lighten($developer-blue, 40%);
       color: $developer-blue;
       border: 0.0625rem solid $off-white;
       border-bottom: 0;
 
-      &.active {
+      &.mui-active {
         border: 0.0625rem solid $developer-blue;
         border-bottom: 1px solid #f2f2f2;
         background: $off-white;
@@ -65,10 +65,10 @@
     border-bottom: 0.0625rem solid $developer-blue;
   }
 
-  .panel {
+  .mui-panel {
     display: none;
 
-    &.active {
+    &.mui-active {
       display: block;
     }
   }
