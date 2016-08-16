@@ -23,19 +23,26 @@ $borderStyle: 1px solid #d9d9d9;
     border-top: $borderStyle;
 
     > .rc-collapse-header {
-      line-height: 3rem;
       cursor: pointer;
-      position: relative;
+      display: flex;
       font-size: 1.25rem;
+      line-height: 2rem;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      position: relative;
+
+      > .arrow {
+        display: none;
+      }
 
       &::after {
         content: '+';
         color: $mobile-blue;
-        position: absolute;
+        flex: 0;
         font-size: 3rem;
         font-weight: 200;
-        right: 0;
-        width: 1em;
+        margin-left: .25em;
+        min-width: 1em;
         text-align: center;
       }
     }
