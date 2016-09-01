@@ -32,7 +32,8 @@ export default React.createClass({
     if (this.props.onChange) {
       this.props.onChange({
         index: index,
-        tabName: this.props.children[index].props.name
+        tabName: this.props.children[index].props.name,
+        slug: this.props.children[index].props.slug
       });
     }
   },

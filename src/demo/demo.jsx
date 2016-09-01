@@ -97,7 +97,7 @@ function handleRadioChange(choice) {
 }
 
 function handleTabSwitch(target) {
-  console.log(`tabChange: ${target.index} - ${target.tabName}`);
+  console.log(`tabChange: ${target.index} - ${target.tabName} - ${target.slug}`);
 }
 
 render((
