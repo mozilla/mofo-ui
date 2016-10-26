@@ -31,7 +31,7 @@ export default React.createClass({
       // Using anchors instead of buttons because Firefox adds "padding" to button elements even with padding:0
       return (
         <button key={index} className={classNames} onClick={this.onTriggerClick}>
-          <img className="mui-photo" src={item.image}></img>
+          <img className="mui-photo" src={item.image} onDragStart={e => e.preventDefault()}></img>
         </button>
       );
     });
