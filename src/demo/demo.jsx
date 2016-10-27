@@ -3,7 +3,7 @@ import { render } from "react-dom";
 
 // Components
 
-import { ThumbCarousel, TabSwitcher, Tab, RadioFilter, Collapse, Panel } from "../exports.js";
+import { ThumbCarousel, TabSwitcher, Tab, RadioFilter, Collapse, Panel, ProfileCard } from "../exports.js";
 
 const App = React.createClass({
   render() {
@@ -18,33 +18,33 @@ const App = React.createClass({
 const Switcher = React.createClass({
   getInitialState () {
     return {
-      externalCSS: ``
+      externalCSS: `mofo-bootstrap`
     };
   },
-  onChange () {
+  onChange (e) {
+    this.setState({
+      externalCSS: e.target.value
+    });
+  },
+  render () {
     let css = {
       vanilla: ``,
       "bootstrap-3": `./css/bootstrap.css`,
       "mofo-bootstrap": `./css/mofo-bootstrap.css`
     };
-
-    this.setState({
-      externalCSS: css[this.refs.themeSelect.value]
-    });
-  },
-  render () {
+    
     return (
       <div className="switcher">
         <div className="wrapper">
           <label htmlFor="theme-selector">Additional CSS</label>
-          <select id="theme-selector" ref="themeSelect" onChange={this.onChange}>
+          <select id="theme-selector" ref="themeSelect" onChange={this.onChange} value={this.state.externalCSS}>
             <option value="vanilla">None</option>
             <option value="bootstrap-3">Bootstrap 3</option>
             <option value="mofo-bootstrap">Mofo Bootstrap</option>
           </select>
         </div>
 
-        <link rel="stylesheet" href={this.state.externalCSS}/>
+        <link rel="stylesheet" href={css[this.state.externalCSS]}/>
         <link rel="stylesheet" href="./css/mofo-ui.css"/>
       </div>
     );
@@ -91,6 +91,30 @@ let carouselData = [{
   caption: `Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
   attribution: `Vic Toomey, Reykjavik`
 }];
+
+let people = [
+  {
+    name: `Stephanie Wright`,
+    title: `Lead`,
+    image: `https://avatars0.githubusercontent.com/u/14626242?v=3&s=400`,
+    links: [<a href="https://twitter.com/shefw">@shefw</a>],
+    bio: `Stephanie joined the team after forming and leading the Research Data Services unit in the University of Washington Libraries. While there she was also Senior Data Science Fellow for the UW's eScience Institute. She brings expertise in data management, sharing and curation to the team. Steph is a self-proclaimed data geek and believer in open and easy access to data.`
+  },
+  {
+    name: `Zannah Marsh`,
+    title: `Learning Strategist`,
+    image: `https://avatars3.githubusercontent.com/u/13855390?v=3&s=400`,
+    links: [<a href="https://twitter.com/zannahlou">@zannahlou</a>],
+    bio: `Zannah draws on her background in interaction design, project-based learning, visual art, and storytelling to create “sticky” learning experiences around technology and design. She's taught web design, programming, interaction design, and data visualization at NYU, the New School, and in the City University of New York system. She was Senior Content Developer at the interactive design firm Local Projects, and an exhibit developer for the Museum of Science in Boston. In her spare time Zannah draws mini-comics and rides her bike around Brooklyn.`
+  },
+  {
+    name: `Aurelia Moser`,
+    title: `Community Lead`,
+    image: `https://avatars3.githubusercontent.com/u/1559703?v=3&s=400`,
+    links: [<a href="https://twitter.com/auremoser">@auremoser</a>],
+    bio: `Aurelia is a creative developer building community around code at the Science Lab. Previously of Ushahidi, Internews-Kenya, and CartoDB, she has a background that blends a cocktail of conservation chemistry and coding for civic tech/non-profit journalism. Recent projects have had mapping sensor data to support agricultural security and sustainable apis ecosystems in the Global South, though she also dabbles in DJing and privacy art. As her about yoga, semantic web theory, web-mapping, and organic chem.`
+  }
+];
 
 function handleRadioChange(choice) {
   console.log(`radioChange: ${choice}`);
@@ -142,6 +166,13 @@ render((
       <h3>ThumbCarousel</h3>
 
       <ThumbCarousel contents={carouselData}></ThumbCarousel>
+
+      <h3>Profile Cards</h3>
+      <div className="container-dynamic">
+          {people.map((person, index) => {
+            return <ProfileCard key={index} {...person}>{person.bio}</ProfileCard>;
+          })}
+      </div>
     </div>
   </App>
 ), document.querySelector(`#app`));
