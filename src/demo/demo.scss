@@ -1,3 +1,7 @@
+$gray40: #666;
+$gray20: #333;
+$white: #fff;
+
 body {
   margin: 0;
   padding: 0;
@@ -15,11 +19,11 @@ body {
 }
 
 .switcher {
-  background: #666;
-  border-bottom: 1px solid #333;
+  background: $gray40;
+  border-bottom: 1px solid $gray20;
 
   .wrapper {
-    color: #fff;
+    color: $white;
     padding: 1em 10px;
     text-align: right;
     display: flex;
@@ -37,8 +41,8 @@ body {
   }
 
   select {
-    background: #fff;
-    color: #333;
+    background: $white;
+    color: $gray20;
     font-size: 14px;
 
     &:focus {

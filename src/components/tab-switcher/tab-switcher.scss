@@ -1,3 +1,6 @@
+$bg-mui-btn: rgba($nightly-blue, 0.9);
+$bg-mu-active: #f2f2f2;
+
 .mui-tab-switcher {
   .mui-tabs {
     display: flex;
@@ -8,7 +11,7 @@
       margin: 0 0.5rem;
       text-transform: none;
       color: $white;
-      background: rgba($nightly-blue, 0.9);
+      background: $bg-mui-btn;
       font-weight: 300;
       font-size: 1.25rem;
       justify-content: center;
@@ -47,22 +50,24 @@
     }
   }
 
-  &.mui-inline .mui-tabs {
-    .mui-btn {
-      background: lighten($developer-blue, 40%);
-      color: $developer-blue;
-      border: 0.0625rem solid $off-white;
-      border-bottom: 0;
+  &.mui-inline {
+    .mui-tabs {
+      border-bottom: 0.0625rem solid $developer-blue;
 
-      &.mui-active {
-        border: 0.0625rem solid $developer-blue;
-        border-bottom: 1px solid #f2f2f2;
-        background: $off-white;
-        margin-bottom: -0.0625rem;
+      .mui-btn {
+        background: lighten($developer-blue, 40%);
+        color: $developer-blue;
+        border: 0.0625rem solid $off-white;
+        border-bottom: 0;
+
+        &.mui-active {
+          border: 0.0625rem solid $developer-blue;
+          border-bottom: 1px solid $bg-mu-active;
+          background: $off-white;
+          margin-bottom: -0.0625rem;
+        }
       }
     }
-
-    border-bottom: 0.0625rem solid $developer-blue;
   }
 
   .mui-panel {

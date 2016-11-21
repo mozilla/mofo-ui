@@ -1,11 +1,15 @@
 .mui-radio-filter {
   margin: 0 auto;
 
-  .mui-radio-inline input[type="radio"] {
-    visibility: hidden;
-  }
+  .mui-radio-inline {
+    input {
+      &[type='radio'] {
+        visibility: hidden;
+      }
 
-  .mui-radio-inline input:checked + span {
-    color: $summit-teal;
+      &:checked + span {
+        color: $summit-teal;
+      }
+    }
   }
 }
