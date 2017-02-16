@@ -3,7 +3,7 @@ import { render } from "react-dom";
 
 // Components
 
-import { ThumbCarousel, TabSwitcher, Tab, RadioFilter, Collapse, Panel } from "../exports.js";
+import { ThumbCarousel, TabSwitcher, Tab, RadioFilter, Collapse, Panel, MofoFooter } from "../exports.js";
 
 const App = React.createClass({
   render() {
@@ -100,6 +100,78 @@ function handleTabSwitch(target) {
   console.log(`tabChange: ${target.index} - ${target.tabName} - ${target.slug}`);
 }
 
+let footerLinks = [
+  {
+    iconType: `info`,
+    link: `https://example.com`,
+    text: `Info`
+  },
+  {
+    iconType: `email`,
+    link: `https://example.com`,
+    text: `Email`
+  },
+  {
+    iconType: `github`,
+    link: `https://example.com`,
+    text: `Github`
+  },
+  {
+    iconType: `chat`,
+    link: `https://example.com`,
+    text: `IRC`
+  },
+  {
+    iconType: `twitter`,
+    link: `https://example.com`,
+    text: `Twitter`,
+  },
+  {
+    iconType: `facebook`,
+    link: `https://example.com`,
+    text: `Facebook`
+  },
+  {
+    iconType: `cc-license`,
+    link: `https://example.com`,
+    text: `License`
+  },
+  {
+    iconType: `code-of-conduct`,
+    link: `https://example.com`,
+    text: `Code of Conduct`
+  },
+  {
+    iconType: `cookies`,
+    link: `https://www.mozilla.org/privacy/websites/#cookies`,
+    text: `Cookies`
+  },
+  {
+    iconType: `legal`,
+    link: `https://example.com`,
+    text: `Legal`
+  },
+  {
+    iconType: `privacy`,
+    link: `https://example.com`,
+    text: `Privacy`
+  },
+  {
+    iconType: `donate`,
+    link: `https://example.com`,
+    text: `Donate`
+  }
+];
+
+let orgs = [
+  {
+    name: `mozilla`,
+    link: `https://mozilla.org`,
+    description: (<p>Mozilla is a global non-profit dedicated to putting you in control of your online experience and shaping the future of the web for the public good. Visit us at <a href="https://mozilla.org">mozilla.org</a>.</p>),
+    className: `mozilla`
+  }
+];
+
 render((
   <App>
     <Switcher></Switcher>
@@ -143,5 +215,10 @@ render((
 
       <ThumbCarousel contents={carouselData}></ThumbCarousel>
     </div>
+
+    <div>
+      <MofoFooter footerLinks={footerLinks} orgs={orgs} />
+    </div>
+
   </App>
 ), document.querySelector(`#app`));
