@@ -6,6 +6,7 @@ export default React.createClass({
       value: React.PropTypes.string.isRequired,
       label: React.PropTypes.string.isRequired
     }).isRequired).isRequired,
+    value: React.PropTypes.string,
     initialChoice: React.PropTypes.string,
     onChange: React.PropTypes.func
   },
@@ -22,6 +23,13 @@ export default React.createClass({
     });
 
     this.props.onChange(choice);
+  },
+  componentWillReceiveProps(nextProps){
+    if (nextProps.value !== this.state.activeFilter){
+      this.setState({
+        activeFilter: nextProps.value
+      });
+    }
   },
   render: function() {
     let options = this.props.options.map(option => {
