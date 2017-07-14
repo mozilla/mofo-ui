@@ -4,8 +4,8 @@
   "description": "React component library for Mozilla Foundation",
   "main": "dist/mofo-ui.js",
   "engines": {
-    "node": "^6.0.0",
-    "npm": "^3.0.0"
+    "node": "^6.11.1",
+    "npm": "^3.10.10"
   },
   "scripts": {
     "build:autoprefix": "node scripts/autoprefix.js",
