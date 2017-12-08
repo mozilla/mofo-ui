@@ -4,10 +4,11 @@ module.exports = [{
     javascript: `./exports.js`
   },
   output: {
-    filename: `/mofo-ui.js`,
+    filename: `mofo-ui.js`,
     path: `${__dirname}/dist`,
     library: `MofoUI`,
-    libraryTarget: `umd`
+    libraryTarget: `umd`,
+    sourceMapFilename: `[file].map`
   },
   externals: [
     {
@@ -20,7 +21,7 @@ module.exports = [{
       {
         test: /\.js(x?)$/,
         exclude: /node_modules/,
-        loader: `babel`,
+        loader: `babel-loader`,
         query: {
           presets: [`es2015`, `react`]
         }
@@ -33,15 +34,17 @@ module.exports = [{
     javascript: `./demo/demo.jsx`
   },
   output: {
-    filename: `/demo.js`,
-    path: `${__dirname}/demo/js`
+    filename: `demo.js`,
+    path: `${__dirname}/demo/js`,
+    sourceMapFilename: `[file].map`
   },
+  devtool: `source-map`,
   module: {
     loaders: [
       {
         test: /\.js(x?)$/,
         exclude: /node_modules/,
-        loader: `babel`,
+        loader: `babel-loader`,
         query: {
           presets: [`es2015`, `react`]
         }

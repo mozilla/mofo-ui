@@ -1,21 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default React.createClass({
-  propTypes: {
-    options: React.PropTypes.arrayOf(React.PropTypes.shape({
-      value: React.PropTypes.string.isRequired,
-      label: React.PropTypes.string.isRequired
-    }).isRequired).isRequired,
-    value: React.PropTypes.string,
-    initialChoice: React.PropTypes.string,
-    onChange: React.PropTypes.func
-  },
-  getInitialState() {
-    return {
+export default class RadioFilter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+    this.state = {
       activeFilter: this.props.initialChoice || this.props.options[0].value
     };
-  },
-  onChange: function () {
+  }
+  onChange() {
     var choice = this.refs.radioFilter.elements.filterBy.value;
 
     this.setState({
@@ -23,15 +17,15 @@ export default React.createClass({
     });
 
     this.props.onChange(choice);
-  },
+  }
   componentWillReceiveProps(nextProps){
     if (nextProps.value !== this.state.activeFilter){
       this.setState({
         activeFilter: nextProps.value
       });
     }
-  },
-  render: function() {
+  }
+  render() {
     let options = this.props.options.map(option => {
       return (
         <label key={option.value} className="mui-radio-inline">
@@ -56,4 +50,14 @@ export default React.createClass({
       </form>
     );
   }
-});
+}
+
+RadioFilter.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired
+  }).isRequired).isRequired,
+  value: PropTypes.string,
+  initialChoice: PropTypes.string,
+  onChange: PropTypes.func
+};

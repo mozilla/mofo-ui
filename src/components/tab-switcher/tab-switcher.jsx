@@ -1,14 +1,17 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // Children nodes and buttons can be hidden if empty based on hidden param passed to them.
 // TODO: find a way to allow another tab to be active by default, especially if it's the only tab with content/not hidden
 
-export default React.createClass({
-  propTypes: {
-    className: React.PropTypes.string,
-    children: React.PropTypes.arrayOf(React.PropTypes.element),
-    onChange: React.PropTypes.func
-  },
+export default class TabSwitcher extends React.Component {
+  constructor(props) {
+    super(props);
+    this.tabClick = this.tabClick.bind(this);
+    this.state = {
+      activeTab: this.getSlugIndex(this.props.initialTab)
+    };
+  }
   getSlugIndex(slug) {
     let slugIndex = 0; // Default to first tab
 
@@ -20,13 +23,8 @@ export default React.createClass({
     }
 
     return slugIndex;
-  },
-  getInitialState() {
-    return {
-      activeTab: this.getSlugIndex(this.props.initialTab)
-    };
-  },
-  tabClick: function (index) {
+  }
+  tabClick(index) {
     this.setState({activeTab: index});
 
     if (this.props.onChange) {
@@ -36,8 +34,8 @@ export default React.createClass({
         slug: this.props.children[index].props.slug
       });
     }
-  },
-  render: function() {
+  }
+  render() {
     let buttons = this.props.children.map((element, index) => {
       if(this.props.children[index].props.hidden) { return; }
 
@@ -47,8 +45,8 @@ export default React.createClass({
           onClick={this.tabClick.bind(null, index)}
           key={element.props.slug}
           hidden={this.props.children[index].props.hidden}>
-            <img className="mui-icon" src={index === this.state.activeTab && element.props.iconActive ? element.props.iconActive : element.props.iconDefault}/>
-            <span className="mui-name">{element.props.name}</span>
+          <img className="mui-icon" src={index === this.state.activeTab && element.props.iconActive ? element.props.iconActive : element.props.iconDefault}/>
+          <span className="mui-name">{element.props.name}</span>
         </button>
       );
     });
@@ -73,4 +71,10 @@ export default React.createClass({
       </div>
     );
   }
-});
+}
+
+TabSwitcher.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.arrayOf(PropTypes.element),
+  onChange: PropTypes.func
+};

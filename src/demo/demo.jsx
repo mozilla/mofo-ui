@@ -5,7 +5,7 @@ import { render } from "react-dom";
 
 import { ThumbCarousel, TabSwitcher, Tab, RadioFilter, Collapse, Panel, MofoFooter } from "../exports.js";
 
-const App = React.createClass({
+class App extends React.Component {
   render() {
     return (
       <div>
@@ -13,14 +13,16 @@ const App = React.createClass({
       </div>
     );
   }
-});
+}
 
-const Switcher = React.createClass({
-  getInitialState () {
-    return {
+class Switcher extends React.Component {
+  constructor (props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+    this.state = {
       externalCSS: ``
     };
-  },
+  }
   onChange () {
     let css = {
       vanilla: ``,
@@ -31,7 +33,7 @@ const Switcher = React.createClass({
     this.setState({
       externalCSS: css[this.refs.themeSelect.value]
     });
-  },
+  }
   render () {
     return (
       <div className="switcher">
@@ -49,7 +51,7 @@ const Switcher = React.createClass({
       </div>
     );
   }
-});
+}
 
 let radioOptions = [
   {
@@ -124,7 +126,7 @@ let footerLinks = [
   {
     iconType: `twitter`,
     link: `https://example.com`,
-    text: `Twitter`,
+    text: `Twitter`
   },
   {
     iconType: `facebook`,

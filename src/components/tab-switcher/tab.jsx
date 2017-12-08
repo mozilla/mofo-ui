@@ -1,17 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default React.createClass({
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    slug: React.PropTypes.string.isRequired,
-    iconDefault: React.PropTypes.string.isRequired,
-    iconActive: React.PropTypes.string
-  },
-  render: function() {
+export default class Tab extends React.Component {
+  render() {
     return (
       <div>
         {this.props.children}
       </div>
     );
   }
-});
+}
+
+Tab.propTypes = {
+  name: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  iconDefault: PropTypes.string.isRequired,
+  iconActive: PropTypes.string
+};

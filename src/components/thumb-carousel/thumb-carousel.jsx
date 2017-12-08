@@ -1,19 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default React.createClass({
-  propTypes: {
-    contents: React.PropTypes.arrayOf(React.PropTypes.shape({
-      image: React.PropTypes.string.isRequired,
-      caption: React.PropTypes.string.isRequired,
-      attribution: React.PropTypes.string.isRequired
-    })).isRequired
-  },
-  getInitialState() {
-    return {
+export default class ThumbCarousel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onTriggerClick = this.onTriggerClick.bind(this);
+    this.state = {
       activeTrigger: 0
     };
-  },
-  onTriggerClick: function (event) {
+  }
+  onTriggerClick(event) {
     let elTrigger = event.currentTarget,
         elSiblings = elTrigger.parentElement.children;
 
@@ -23,8 +19,8 @@ export default React.createClass({
     this.setState({
       activeTrigger: index
     });
-  },
-  render: function() {
+  }
+  render() {
     let triggers = this.props.contents.map((item, index) => {
       let classNames = `mui-hero${this.state.activeTrigger === index ? ` mui-active` : ``}`;
 
@@ -61,4 +57,12 @@ export default React.createClass({
       </div>
     );
   }
-});
+}
+
+ThumbCarousel.propTypes = {
+  contents: PropTypes.arrayOf(PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    caption: PropTypes.string.isRequired,
+    attribution: PropTypes.string.isRequired
+  })).isRequired
+};

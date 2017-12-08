@@ -1,19 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default React.createClass({
-  propTypes: {
-    footerLinks: React.PropTypes.arrayOf(React.PropTypes.shape({
-      iconType: React.PropTypes.oneOf([`info`, `email`, `github`, `chat`, `twitter`, `facebook`, `cc-license`, `code-of-conduct`, `cookies`, `legal`, `privacy`, `donate`,]).isRequired,
-      link: React.PropTypes.string.isRequired,
-      text: React.PropTypes.string.isRequired
-    }).isRequired).isRequired,
-    orgs: React.PropTypes.arrayOf(React.PropTypes.shape({
-      name: React.PropTypes.string.isRequired,
-      link: React.PropTypes.string.isRequired,
-      description: React.PropTypes.element.isRequired,
-      className: React.PropTypes.string
-    }).isRequired).isRequired
-  },
+export default class MofoFooter extends React.Component {
   renderFooterLinks() {
     return this.props.footerLinks.map((footerLink) => {
       return (
@@ -22,7 +10,7 @@ export default React.createClass({
         </li>
       );
     });
-  },
+  }
   renderOrgs() {
     return this.props.orgs.map((org) => {
       // "org-info" is the default classname to be assigned to every organization's wrapper <div>
@@ -36,8 +24,8 @@ export default React.createClass({
         </div>
       );
     });
-  },
-  render: function() {
+  }
+  render() {
     return (
       <footer className="mofo-footer">
         <div className="container">
@@ -49,4 +37,18 @@ export default React.createClass({
       </footer>
     );
   }
-});
+}
+
+MofoFooter.propTypes = {
+  footerLinks: PropTypes.arrayOf(PropTypes.shape({
+    iconType: PropTypes.oneOf([`info`, `email`, `github`, `chat`, `twitter`, `facebook`, `cc-license`, `code-of-conduct`, `cookies`, `legal`, `privacy`, `donate`]).isRequired,
+    link: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
+  }).isRequired).isRequired,
+  orgs: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    description: PropTypes.element.isRequired,
+    className: PropTypes.string
+  }).isRequired).isRequired
+};
