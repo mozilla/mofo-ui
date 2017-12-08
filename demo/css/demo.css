@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+#app {
+  margin: 0;
+  padding: 0; }
+  #app .wrapper {
+    margin: auto;
+    max-width: 960px;
+    padding: 10px; }
+
+.switcher {
+  background: #666;
+  border-bottom: 1px solid #333; }
+  .switcher .wrapper {
+    color: #fff;
+    padding: 1em 10px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2em;
+    font-family: Helvetica, Arial, sans-serif; }
+  .switcher label {
+    margin-right: 0.5em;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400; }
+  .switcher select {
+    background: #fff;
+    color: #333;
+    font-size: 14px; }
+    .switcher select:focus {
+      outline: 0; }
